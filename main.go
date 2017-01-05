@@ -17,12 +17,16 @@ Option: -close to close selected ports
 `
 
 func main() {
-	flag.Usage = func() {
+	usage := func() {
 		fmt.Fprint(os.Stderr, fmt.Sprintf(usage))
 	}
-
+	flag.Usage = usage
 	close := flag.Bool("close", false, "Close ports")
 	flag.Parse()
+	if len(os.Args) <= 1 {
+		usage()
+		return
+	}
 	f, err := goupnp.Discover()
 	if err != nil {
 		log.Println(err)
