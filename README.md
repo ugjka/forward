@@ -5,6 +5,6 @@ Installation
 ```go install github.com/ugjka/forward```
 
 
-```Usage: forward port1 port2 port3 etc
+```Usage: forward port1 port2 port3 etc```
 
-Option: -close to close selected ports```
+```Option: -close to close selected ports```
