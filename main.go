@@ -23,7 +23,7 @@ func main() {
 	flag.Usage = usage
 	close := flag.Bool("close", false, "Close ports")
 	flag.Parse()
-	if len(os.Args) <= 1 {
+	if len(flag.Args()) == 0 {
 		usage()
 		return
 	}
@@ -32,10 +32,7 @@ func main() {
 		log.Println(err)
 		return
 	}
-	for _, v := range os.Args[1:] {
-		if v == "-close" {
-			continue
-		}
+	for _, v := range flag.Args() {
 		i, err := strconv.Atoi(v)
 		if err != nil {
 			log.Println(err)
