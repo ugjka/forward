@@ -21,7 +21,7 @@ func main() {
 		fmt.Fprint(os.Stderr, fmt.Sprintf(usage))
 	}
 	flag.Usage = usage
-	close := flag.Bool("close", false, "Close ports")
+	closing := flag.Bool("close", false, "Close ports")
 	flag.Parse()
 	if len(flag.Args()) == 0 {
 		usage()
@@ -38,7 +38,7 @@ func main() {
 			log.Println(err)
 			continue
 		}
-		if *close {
+		if *closing {
 			if err := f.Clear(uint16(i)); err != nil {
 				log.Println(err)
 			}
