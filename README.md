@@ -1,4 +1,7 @@
 # forward
+
+[![Donate](https://dl.ugjka.net/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UVTCZYQ3FVNCY)
+
 forward ports on your router via upnp
 
 Installation
